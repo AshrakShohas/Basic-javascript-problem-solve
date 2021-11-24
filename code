@@ -1,0 +1,82 @@
+/ First Part of the assignment(prob-1:seerToMon)
+function seerToMon(seer) {
+if (typeof seer!="number" || seer<0)
+{
+return "Input should be positive number";
+}
+else
+{
+var result = seer / 40;
+return result;
+}
+}
+var seer = seerToMon(45);
+console.log(seer);
+// 2nd part of the assignment(problem2:totalSales)
+unction totalSales(shirtQuantity, pantQuantity, shoesQuantity)
+{
+if ((typeof shirtQuantity != "number" || shirtQuantity < 0) || (typeof pantQuantity != "number" || pantQuantity < 0) || (typeof shoesQuantity != "number" || shoesQuantity < 0)) {
+return "Input should be positive number";
+}
+else
+{
+// price of the products
+const perShirt = 100;
+const perPant = 200;
+const perShoe = 500;
+// quantity price
+const shirtCost = perShirt * shirtQuantity;
+const pantCost = perPant * pantQuantity;
+const shoeCost = perShoe * shoesQuantity;
+// total price
+const total = shirtCost + pantCost + shoeCost;
+return total;
+}
+}
+var cart = totalSales(4, 4, 2);
+console.log(cart);
+// 3rd part of the assignment(Problem3:deliveryCost)
+function deliveryCost(tShirt) {
+if (typeof tShirt != "number" || tShirt < 0) {
+return "Input should be positive number";
+}
+else
+{
+// quantity costs
+const tShirtLessThan100 = 100;
+const tShirtbetween100and200 = 80;
+const tShirtMoreThan200 = 50;
+if (tShirt <= 100) {
+const cost = tShirt * tShirtLessThan100;
+return cost;
+} else if (tShirt <= 200) {
+const first100tShirt = 100 * tShirtLessThan100;
+const resttShirt = tShirt - 100;
+const resttShirtCost = resttShirt * tShirtbetween100and200;
+const totalCost = first100tShirt + resttShirtCost;
+return totalCost;
+}
+else {
+const first100tShirt = 100 * tShirtLessThan100;
+const second100tShirt = 100 * tShirtbetween100and200;
+const rest3rdtShirt = tShirt - 200;
+const rest3rdtShirtCost = rest3rdtShirt * tShirtMoreThan200;
+const totalCost = first100tShirt + second100tShirt + rest3rdtShirtCost;
+return totalCost;
+}
+}
+}
+var costOfDelivery = deliveryCost(180);
+console.log(costOfDelivery);
+// 4th part of the assignment(prob4: perfectFriend)
+const friends = ["Shion","Shohas","bappy","Ashrak","Arif","Lima"]
+function perfectFriend(names) {
+for (const name of names) {
+if (name.length == 5) {
+return name;
+}
+}
+return "Requirement Not Fullfilled";
+}
+var friend = perfectFriend(friends)
+console.log(friend);
